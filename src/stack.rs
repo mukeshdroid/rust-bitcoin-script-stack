@@ -188,7 +188,7 @@ impl StackTracker {
         }
     }
 
-    fn push(&mut self, var: StackVariable) {
+    pub fn push(&mut self, var: StackVariable) {
         self.data.push_stack(var);
         let totalsize = self.data.stack.iter().fold(0, |acc, f| acc + f.size);
         self.max_stack_size = self.max_stack_size.max(totalsize);
