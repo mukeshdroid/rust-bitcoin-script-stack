@@ -194,7 +194,7 @@ impl StackTracker {
         self.max_stack_size = self.max_stack_size.max(totalsize);
     }
 
-    fn push_script(&mut self, script: Script) {
+    pub fn push_script(&mut self, script: Script) {
         self.script.push(script);
         if self.with_history {
             self.history.push(self.data.redo_log.len() as u32);
